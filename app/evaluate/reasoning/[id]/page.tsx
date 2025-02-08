@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import { useParams, useRouter } from "next/navigation"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { NavHeader } from "@/components/nav-header"
+import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const criteriaData = [
   {
@@ -66,17 +65,17 @@ const criteriaData = [
       "Growth opportunities are identified but need more specific expansion plans.",
     ],
   },
-]
+];
 
 export default function CriteriaReasoning() {
-  const router = useRouter()
-  const params = useParams()
-  const criterionId = Number(params.id)
+  const router = useRouter();
+  const params = useParams();
+  const criterionId = Number(params.id);
 
-  const criterion = criteriaData.find((c) => c.id === criterionId)
+  const criterion = criteriaData.find((c) => c.id === criterionId);
 
   if (!criterion) {
-    return <div>Criterion not found</div>
+    return <div>Criterion not found</div>;
   }
 
   return (
@@ -101,10 +100,14 @@ export default function CriteriaReasoning() {
                 className="rounded-full"
               />
               <div>
-                <h1 className="text-2xl font-bold text-[#17b7ba] mb-2">{criterion.title}</h1>
+                <h1 className="text-2xl font-bold text-[#17b7ba] mb-2">
+                  {criterion.title}
+                </h1>
                 <div className="flex items-center gap-2">
                   <span className="text-xl">Score:</span>
-                  <span className="text-3xl font-bold text-[#17b7ba]">{criterion.score}</span>
+                  <span className="text-3xl font-bold text-[#17b7ba]">
+                    {criterion.score}
+                  </span>
                 </div>
               </div>
             </div>
@@ -123,6 +126,5 @@ export default function CriteriaReasoning() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
